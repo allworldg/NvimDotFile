@@ -1,0 +1,5 @@
+require("allworldg.plugins")
+require("allworldg.keybindings")
+require("allworldg.lspconfig")
+require("allworldg.colorscheme")
+require("allworldg.basic")
