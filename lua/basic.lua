@@ -31,7 +31,7 @@ vim.o.smartindent = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 -- 搜索不要高亮
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 -- 边输入边搜索
 vim.o.incsearch = true
 -- 使用增强状态栏后不再需要 vim 的模式提示
@@ -57,18 +57,18 @@ vim.o.swapfile = false
 -- smaller updatetime 
 vim.o.updatetime = 300
 -- 等待mappings
-vim.o.timeoutlen = 100
+vim.o.timeoutlen = 700
 -- split window 从下边和右边出现
 vim.o.splitbelow = true
 vim.o.splitright = true
 -- 自动补全不自动选中
 vim.g.completeopt = "menu,menuone,noselect,noinsert"
--- 样式
+-- 样式(开启真彩色，防止在gui和终端下颜色不同（大概不需要）)
 vim.o.termguicolors = true
 vim.opt.termguicolors = true
 -- 不可见字符的显示，这里只把空格显示为一个点
-vim.o.list = true
-vim.o.listchars = "space:·"
+-- vim.o.list = true
+-- vim.o.listchars = "space:·"
 -- 补全增强
 vim.o.wildmenu = true
 -- Dont' pass messages to |ins-completin menu|
@@ -76,3 +76,5 @@ vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.pumheight = 10
 -- always show tabline
 vim.o.showtabline = 2
+-- 配置剪切板
+vim.opt.clipboard = "unnamedplus"

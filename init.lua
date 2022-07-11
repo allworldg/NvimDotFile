@@ -1,4 +1,8 @@
-require("allworldg")
-
-
-
+require("plugins")
+require("keybindings")
+require("lsp.lspconfig")
+require("colorscheme")
+require("basic")
+require("plugin-config.telescope")
+require("plugin-config.nvim-treesiter")
+require("plugin-config.nvim-tree")
