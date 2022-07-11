@@ -8,8 +8,8 @@ end
 require'nvim-tree'.setup {
      -- 完全禁止内置netrw
   disable_netrw = true,
-    -- 关闭文件时自动关闭
-    auto_close = true,
+    -- 关闭文件时自动关闭(疑似过时)
+    -- auto_close = true,
     -- 不显示 git 状态图标
     git = {
         enable = false
@@ -29,7 +29,7 @@ require'nvim-tree'.setup {
       -- 首次打开大小适配
       resize_window = true,
       -- 打开文件时关闭 tree
-      quit_on_open = false,
+      quit_on_open = true,
     },
   },
 }
