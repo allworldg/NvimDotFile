@@ -57,7 +57,7 @@ map("v", "J", ":move '>+1<CR>gv-gv", opt)
 map("v", "K", ":move '<-2<CR>gv-gv", opt)
 
 -- 在visual mode 里粘贴不要复制
-map("v", "p", '"_dP', opt)
+-- map("v", "p", '"_dP', opt)
 
 -- 退出
 map("n", "qq", ":q!<CR>", opt)
@@ -144,6 +144,50 @@ pluginKeys.telescopeList = {
 
 -- nvimTree
 map('n', '<A-m>', ':NvimTreeToggle<CR>', opt)
+-- 列表快捷键
+pluginKeys.nvimTreeList = { -- 打开文件或文件夹
+  { key = { "o", "<2-LeftMouse>" }, action = "edit" },
+  { key = { "<Tab>"}, action = "preview"},
+  { key = "<CR>", action = "edit" },
+  -- v分屏打开文件
+  { key = "v", action = "vsplit" },
+  -- h分屏打开文件
+  { key = "h", action = "split" },
+  -- Ignore (node_modules)
+  { key = "i", action = "toggle_ignored" },
+  -- Hide (dotfiles)
+  { key = ".", action = "toggle_dotfiles" },
+  { key = "R", action = "refresh" },
+  -- 文件操作
+  { key = "a", action = "create" },
+  { key = "d", action = "remove" },
+  { key = "r", action = "rename" },
+  { key = "x", action = "cut" },
+  { key = "c", action = "copy" },
+  { key = "p", action = "paste" },
+  { key = "y", action = "copy_name" },
+  { key = "Y", action = "copy_path" },
+  { key = "gy", action = "copy_absolute_path" },
+  { key = "I", action = "toggle_file_info" },
+  { key = "n", action = "tabnew" },
+  -- 进入下一级
+  { key = { "]" }, action = "cd" },
+  -- 进入上一级
+  { key = { "[" }, action = "dir_up" },
+}
+-- bufferline
+-- 左右Tab切换
+map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
+-- "moll/vim-bbye" 关闭当前 buffer
+map("n", "<C-w>", ":Bdelete!<CR>", opt)
+-- 关闭左/右侧标签页
+map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
+map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
+-- 关闭其他标签页
+map("n", "<leader>bo", ":BufferLineCloseRight<CR>:BufferLineCloseLeft<CR>", opt)
+-- 关闭选中标签页
+map("n", "<leader>bp", ":BufferLinePickClose<CR>", opt)
 
 -- nvim-cmp 自动补全
 pluginKeys.cmp = function(cmp)

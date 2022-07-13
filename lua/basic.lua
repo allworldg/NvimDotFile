@@ -1,9 +1,8 @@
 -- utf8
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = 'utf-8'
-vim.opt.clipboard = 'unnamedplus'
-
 -- jk移动时光标下上方保留8行
+--vim.opt.clipboard = 'unnamedplus'
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
 -- 使用相对行号
@@ -78,5 +77,15 @@ vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.pumheight = 10
 -- always show tabline
 vim.o.showtabline = 2
--- 配置剪切板
-vim.opt.clipboard = "unnamedplus"
+
+
+vim.cmd([[
+let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+if executable(s:clip)
+    augroup WSLYank
+        autocmd!
+        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+    augroup END
+endif
+
+]])

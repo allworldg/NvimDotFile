@@ -1,5 +1,6 @@
-#include <stdio.h>
-int main() {
-  int hello = 0;
-  printf("%d",hello);
+#include<stdio.h>
+int main(){
+  int i = 0;
+  
+
 }
