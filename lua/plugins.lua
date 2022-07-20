@@ -5,13 +5,20 @@ return require('packer').startup(function()
     "williamboman/nvim-lsp-installer",
     "neovim/nvim-lspconfig",
   }
+
   -- theme
   use({ 'projekt0n/github-nvim-theme' })
-  -- telescope (to find file)
   use {
-    'nvim-telescope/telescope.nvim',
-    requires = { { 'nvim-lua/plenary.nvim' } }
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
+
+
+  --telescope (to find file)
+   use {
+     'nvim-telescope/telescope.nvim',tag="0.1.0",
+      requires = { { 'nvim-lua/plenary.nvim' } }
+   }
   -- nvim-treesiter
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -30,6 +37,15 @@ return require('packer').startup(function()
   use 'hrsh7th/nvim-cmp'
   use("hrsh7th/cmp-nvim-lsp-signature-help") -- { name = 'nvim_lsp_signature_help' }
 
+  -- vsnip
+  use 'hrsh7th/cmp-vsnip' -- { name = 'vsnip' }
+  use 'hrsh7th/vim-vsnip'
+  use 'rafamadriz/friendly-snippets'
+
+
+  -- lspkind
+  use 'onsails/lspkind-nvim'
+
   -- autopairs
   use("windwp/nvim-autopairs")
 
@@ -38,15 +54,8 @@ return require('packer').startup(function()
 
   -- bufferline
   use({
-    "akinsho/bufferline.nvim",
-    requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" },
-  })
-
-  -- vsnip
-  use 'hrsh7th/cmp-vsnip' -- { name = 'vsnip' }
-  use 'hrsh7th/vim-vsnip'
-  use 'rafamadriz/friendly-snippets'
-  -- lspkind
-  use 'onsails/lspkind-nvim'
+     "akinsho/bufferline.nvim",
+     requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" },
+   })
 
 end)

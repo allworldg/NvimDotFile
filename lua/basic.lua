@@ -6,22 +6,18 @@ vim.o.fileencoding = 'utf-8'
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
 -- 使用相对行号
--- vim.wo.number = true
+vim.wo.number = true
 vim.wo.relativenumber = true
 -- 高亮所在行
 -- vim.wo.cursorline = true
 -- 显示左侧图标指示列
 vim.wo.signcolumn = "yes"
--- 右侧参考线，超过表示代码太长了，考虑换行
--- vim.wo.colorcolumn = "80"
--- 缩进2个空格等于一个Tab
-vim.o.tabstop = 2
-vim.bo.tabstop = 2
-vim.o.softtabstop = 2
-vim.o.shiftround = true
+-- one tab == 2 blackspace
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftround = true
 -- >> << 时移动长度
-vim.o.shiftwidth = 2
-vim.bo.shiftwidth = 2
+vim.opt.shiftwidth = 2
 -- 新行对齐当前行，空格替代tab
 vim.o.expandtab = true
 vim.bo.expandtab = true
@@ -32,7 +28,7 @@ vim.o.smartindent = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 -- 搜索不要高亮
-vim.o.hlsearch = true
+vim.o.hlsearch = false
 -- 边输入边搜索
 vim.o.incsearch = true
 -- 使用增强状态栏后不再需要 vim 的模式提示
@@ -43,8 +39,7 @@ vim.o.cmdheight = 2
 vim.o.autoread = true
 vim.bo.autoread = true
 -- 禁止折行
-vim.o.wrap = false
-vim.wo.wrap = false
+vim.opt.wrap = false
 -- 行结尾可以跳到下一行
 vim.o.whichwrap = 'b,s,<,>,[,],h,l'
 -- 允许隐藏被修改过的buffer
@@ -65,7 +60,7 @@ vim.o.splitright = true
 -- 自动补全不自动选中
 vim.g.completeopt = "menu,menuone,noselect,noinsert"
 -- 样式(开启真彩色，防止在gui和终端下颜色不同（大概不需要）)
-vim.o.termguicolors = true
+-- vim.o.termguicolors = true
 vim.opt.termguicolors = true
 -- 不可见字符的显示，这里只把空格显示为一个点
 -- vim.o.list = true
@@ -76,9 +71,10 @@ vim.o.wildmenu = true
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.pumheight = 10
 -- always show tabline
-vim.o.showtabline = 2
+-- vim.o.showtabline = 2
 
 
+-- wsl use windows clip , <C-c> from windows and <C-v> to wsl , 'yy' from wsl and <C-v> to windows
 vim.cmd([[
 let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
 if executable(s:clip)
@@ -89,3 +85,4 @@ if executable(s:clip)
 endif
 
 ]])
+

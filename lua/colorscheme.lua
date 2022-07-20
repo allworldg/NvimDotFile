@@ -10,7 +10,7 @@ require("github-theme").setup({
   -- Overwrite the highlight groups
   overrides = function(c)
     return {
-      htmlTag = {fg = c.red, bg = "#282c34", sp = c.hint, style = "underline"},
+      -- htmlTag = {fg = c.red, bg = "#282c34", sp = c.hint, style = "underline"},
       DiagnosticHint = {link = "LspDiagnosticsDefaultHint"},
       -- this will remove the highlight groups
       TSField = {},
