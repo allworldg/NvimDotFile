@@ -53,12 +53,6 @@ map("v", "/", "/\\v", { noremap = true, silent = false })
 -- visual模式下缩进代码
 map("v", "<", "<gv", opt)
 map("v", ">", ">gv", opt)
-<<<<<<< HEAD
-=======
--- 上下移动选中文本
-map("v", "j", ":move '>+1<cr>gv-gv", opt)
-map("v", "k", ":move '<-2<cr>gv-gv", opt)
->>>>>>> 178f05e8435e659fe70314e25c840709944b0f77
 
 -- 在visual mode 里粘贴不要复制
 -- map("v", "p", '"_dp', opt)
