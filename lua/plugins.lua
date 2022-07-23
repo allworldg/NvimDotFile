@@ -27,7 +27,7 @@ return require('packer').startup(function()
   -- nvim-tree
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons'
+    requires = 'kyazdani42/nvim-web-devicons',
   }
   -- nvim-cmp
   use 'hrsh7th/cmp-nvim-lsp' -- { name = nvim_lsp }
@@ -42,7 +42,6 @@ return require('packer').startup(function()
   use 'hrsh7th/vim-vsnip'
   use 'rafamadriz/friendly-snippets'
 
-
   -- lspkind
   use 'onsails/lspkind-nvim'
 
@@ -56,6 +55,7 @@ return require('packer').startup(function()
   use({
      "akinsho/bufferline.nvim",
      requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" },
+     -- cond = function () return true end 
    })
 
 end)

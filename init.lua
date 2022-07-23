@@ -5,7 +5,6 @@ require("basic")
 -- lsp
 require('lsp/nvim-cmp')
 require("lsp.lspconfig")
-
 -- plugin config
 require("plugin-config.telescope")
 require("plugin-config.nvim-treesiter")

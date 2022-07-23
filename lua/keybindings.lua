@@ -9,7 +9,6 @@
 -- leader key 为空
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
 local opt = {
   noremap = true,
   silent = true,
@@ -212,12 +211,11 @@ pluginKeys.cmp = function(cmp)
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
   end
-
   return {
     -- 上一个
-    ["<C-k>"] = cmp.mapping.select_prev_item(),
+    ["<C-p>"] = cmp.mapping.select_prev_item(),
     -- 下一个
-    ["<C-j>"] = cmp.mapping.select_next_item(),
+    ["<C-n>"] = cmp.mapping.select_next_item(),
     -- 出现补全
     ["<A-.>"] = cmp.mapping(cmp.mapping.complete(),{ "i", "c" }),
     -- 取消
