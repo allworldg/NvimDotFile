@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/allworldg/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
     url = "https://github.com/projekt0n/github-nvim-theme"
   },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/home/allworldg/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/allworldg/.local/share/nvim/site/pack/packer/start/lspkind-nvim",

@@ -36,6 +36,7 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-cmdline' -- { name = 'cmdline' }
   use 'hrsh7th/nvim-cmp'
   use("hrsh7th/cmp-nvim-lsp-signature-help") -- { name = 'nvim_lsp_signature_help' }
+  use ({"ray-x/lsp_signature.nvim"})
 
   -- vsnip
   use 'hrsh7th/cmp-vsnip' -- { name = 'vsnip' }

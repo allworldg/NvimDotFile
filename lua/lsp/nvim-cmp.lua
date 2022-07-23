@@ -3,7 +3,11 @@
 -- https://github.com/onsails/lspkind-nvim
 
 --local lspkind = require("lspkind")
-local cmp = require("cmp")
+local status, cmp = pcall(require, "cmp")
+if not status then
+  print("cmp not found")
+end
+cmp.setup {}
 
 cmp.setup({
   -- 指定 snippet 引擎
@@ -23,9 +27,10 @@ cmp.setup({
     end,
   },
   -- 来源
-  sources = cmp.config.sources({
-    { name = "nvim_lsp" },
-    { name = "nvim_lsp_signature_help" },
+  sources = {
+    { name = 'nvim_lsp' },
+    -- { name = "lsp_signature"},
+    -- { name = "nvim_lsp_signature_help" },
     -- For vsnip users.
     { name = "vsnip" },
     { name = "buffer" },
@@ -35,8 +40,8 @@ cmp.setup({
     -- { name = 'ultisnips' },
     -- -- For snippy users.
     -- { name = 'snippy' },
-  }, { { name = "path" } }),
-
+    {name = "path" },
+  }, 
   -- 快捷键
   mapping = require("keybindings").cmp(cmp),
 })
