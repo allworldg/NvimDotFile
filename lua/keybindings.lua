@@ -36,11 +36,6 @@ map("n", "<leader>wq", ":wqa!<CR>", opt)
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
--- 上下滚动浏览
-map("n", "<c-j>", "5j", opt)
-map("n", "<c-k>", "5k", opt)
-map("v", "<c-j>", "5j", opt)
-map("v", "<c-k>", "5k", opt)
 -- ctrl u / ctrl + d  只移动9行，默认移动半屏
 map("n", "<c-u>", "10k", opt)
 map("n", "<c-d>", "10j", opt)
@@ -57,8 +52,8 @@ map("v", ">", ">gv", opt)
 -- map("v", "p", '"_dp', opt)
 
 -- 退出
-map("n", "qq", ":q!<cr>", opt)
-map("n", "<leader>q", ":qa!<cr>", opt)
+map("n", "qq", ":q!<CR>", opt)
+map("n", "<leader>q", ":qa!<CR>", opt)
 ------------------------------------------------------------------
 -- windows 分屏快捷键
 ------------------------------------------------------------------

@@ -5,9 +5,8 @@
 --local lspkind = require("lspkind")
 local status, cmp = pcall(require, "cmp")
 if not status then
-  print("cmp not found")
+  vim.notify("cmp not found")
 end
-cmp.setup {}
 
 cmp.setup({
   -- 指定 snippet 引擎

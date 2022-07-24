@@ -1,4 +1,7 @@
-return require('packer').startup(function()
+-- if you have opt options
+vim.cmd [[packadd packer.nvim]] 
+
+return require('packer').startup({function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use {
@@ -35,7 +38,7 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-path' -- { name = 'path' }
   use 'hrsh7th/cmp-cmdline' -- { name = 'cmdline' }
   use 'hrsh7th/nvim-cmp'
-  use("hrsh7th/cmp-nvim-lsp-signature-help") -- { name = 'nvim_lsp_signature_help' }
+  --use("hrsh7th/cmp-nvim-lsp-signature-help") -- { name = 'nvim_lsp_signature_help' }
   use ({"ray-x/lsp_signature.nvim"})
 
   -- vsnip
@@ -58,5 +61,12 @@ return require('packer').startup(function()
      requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" },
      -- cond = function () return true end 
    })
-
-end)
+end,
+config = {
+  snapshot_path = require("packer.util").join_paths(vim.fn.stdpath("config"), "snapshots"),
+    -- 这里锁定插件版本在v1，不会继续更新插件
+  snapshot = "v1",
+  max_jobs = 16,
+  }
+}
+)

@@ -1,12 +1,12 @@
 local status, lsp_signature = pcall(require, "lsp_signature")
 if not status then
-  print("lsp_signature not found")
+  vim.notify("lsp_signature not found")
 end
 
 
 lsp_signature.setup({
   bind = true,
-  -- doc_lines = 4,
+  doc_lines = 1,
   toggle_key = "<C-k>",
   floating_window = true,
   floating_window_above_cur_line = true,
