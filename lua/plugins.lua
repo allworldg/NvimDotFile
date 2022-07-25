@@ -63,9 +63,9 @@ return require('packer').startup({function()
    })
 end,
 config = {
-  snapshot_path = require("packer.util").join_paths(vim.fn.stdpath("config"), "snapshots"),
-    -- 这里锁定插件版本在v1，不会继续更新插件
-  snapshot = "v1.json",
+  -- snapshot_path = require("packer.util").join_paths(vim.fn.stdpath("config"), "snapshots"),
+  --   -- 这里锁定插件版本在v1，不会继续更新插件
+  -- snapshot = "v1.json",
   max_jobs = 16,
   }
 }

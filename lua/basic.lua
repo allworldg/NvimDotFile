@@ -59,8 +59,7 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 -- 自动补全不自动选中
 vim.g.completeopt = "menu,menuone,noselect,noinsert"
--- 样式(开启真彩色，防止在gui和终端下颜色不同（大概不需要）)
--- vim.o.termguicolors = true
+-- 样式(开启真彩色，防止在gui和终端下颜色不同（大概不需要?）)
 vim.opt.termguicolors = true
 -- 不可见字符的显示，这里只把空格显示为一个点
 -- vim.o.list = true
@@ -72,7 +71,6 @@ vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.pumheight = 10
 -- always show tabline
 -- vim.o.showtabline = 2
-
 
 -- wsl use windows clip , <C-c> from windows and <C-v> to wsl , 'yy' from wsl and <C-v> to windows
 vim.cmd([[
